@@ -10,11 +10,10 @@ PART 1 — Variables and Arithmetic
 ---------------------------------------
 */
 
-int addNumbers(int a, int b)
-{
+int addNumbers(int a, int b){
     // TODO
     // Return the sum of a and b
-
+    return a+b;
 }
 
 
@@ -25,11 +24,15 @@ PART 2 — Loops
 ---------------------------------------
 */
 
-int sumUpToN(int n)
-{
+int sumUpToN(int n){
     // TODO
     // Using a loop calculate the sum
     // 1 + 2 + 3 + ... + n
+    int sum = 0;
+    for(int i = 1; i <= n; i++){
+        sum += i;
+    }
+    return sum;
 }
 
 
@@ -40,10 +43,16 @@ PART 3 — Vectors
 ---------------------------------------
 */
 
-int findMaximum(vector<int> numbers)
-{
+int findMaximum(vector<int> numbers){
     // TODO
     // Return the largest number in the vector
+    int max = numbers[0];
+    for(int i = 1; i < numbers.size(); i++){
+        if (max <= numbers[i]){
+            max = numbers[i];
+        }
+    }
+    return  max;
 }
 
 
@@ -54,10 +63,14 @@ PART 4 — Strings
 ---------------------------------------
 */
 
-string reverseString(string text)
-{
+string reverseString(string text){
     // TODO
     // Return the reversed version of the string
+    string reversed = "";
+    for(int i = text.length() - 1; i >= 0; i--){
+        reversed += text[i];
+    }
+    return reversed;
 }
 
 
@@ -68,25 +81,28 @@ PART 5 — Simple Class
 ---------------------------------------
 */
 
-class Student
-{
+class Student{
 private:
     string name;
     int grade;
 
 public:
-
     // TODO
     // Create a constructor that receives
     // name and grade
-
-
+    Student(string n, int g){
+    name = n;
+    grade = g;
+    }
     // TODO
     // Create a function printInfo()
     // that prints:
     // Name: <name>
     // Grade: <grade>
-
+    void printInfo(){
+        cout << "Name: " << name << endl;
+        cout << "Grade: " << grade << endl;
+    }
 };
 
 
@@ -97,8 +113,7 @@ MAIN FUNCTION
 ---------------------------------------
 */
 
-int main()
-{
+int main(){
     cout << "C++ Review Lab\n";
 
     /*
